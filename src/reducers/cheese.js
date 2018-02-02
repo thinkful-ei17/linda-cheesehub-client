@@ -9,10 +9,14 @@ const initialState = {
 export default (state = initialState, action) => {
     switch(action.type) {
       case FETCH_CHEESES_REQUEST: 
+      console.log("Action fetch cheeses request through reducer ran");
         return Object.assign({}, state, {
           loading: true
         })
       case FETCH_CHEESES_SUCCESS:
+      console.log("Action fetch cheeses success through reducer ran");
+      console.log("what is in state now", state);
+      console.log("what is in action now", action);
         return Object.assign({}, state, {
           loading: false,
           error: null,
