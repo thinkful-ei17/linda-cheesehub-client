@@ -6,8 +6,9 @@ export const fetchCheesesRequest = () => ({
 });
 
 export const FETCH_CHEESES_SUCCESS = 'FETCH_CHEESES_SUCCESS';
-export const fetchCheesesSuccess = () => ({
+export const fetchCheesesSuccess = (cheeses) => ({
   type: FETCH_CHEESES_SUCCESS,
+  cheeses
 });
 
 export const FETCH_CHEESES_ERROR = 'FETCH_CHEESES_ERROR';
@@ -24,6 +25,7 @@ export const fetchCheeses = () => (dispatch) => {
     }
     return response.json();
   })
-  .then(cheeses => dispatch(fetchCheesesSuccess(cheeses)))
+  .then(cheeses => {console.log('what is cheeses here', cheeses);
+    dispatch(fetchCheesesSuccess(cheeses))})
   .catch(error => dispatch(fetchCheesesError(error)))
 }

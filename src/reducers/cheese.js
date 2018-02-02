@@ -17,6 +17,7 @@ export default (state = initialState, action) => {
       console.log("Action fetch cheeses success through reducer ran");
       console.log("what is in state now", state);
       console.log("what is in action now", action);
+      console.log("what is in action cheeses", action.cheeses);
         return Object.assign({}, state, {
           loading: false,
           error: null,
