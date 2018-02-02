@@ -14,6 +14,7 @@ class CheeseList extends React.Component{
       {cheese}
     </li>
   ));
+  console.log('what is cheeses - client - CheeseList render', cheeses);
 
   return (
     <ul id="cheeseList">
