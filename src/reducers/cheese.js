@@ -16,7 +16,7 @@ export default (state = initialState, action) => {
         return Object.assign({}, state, {
           loading: false,
           error: null,
-          cheeses: [...state.cheeses, action.cheeses]
+          cheeses: action.cheeses,
         })
       case FETCH_CHEESES_ERROR:
         return Object.assign({}, state, {
